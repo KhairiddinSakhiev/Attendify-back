@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home</title>
+    <link rel="stylesheet" href="{% static 'css/main.css' %}">
+    <style>
+      h2{
+        color: red;
+      }
+     #edit{
+            display: inline-block;
+            background-color: greenyellow;
+            padding: 8px 10px;
+            border-radius: 5px;
+            text-decoration: none;
+            font-size: 20px;
+            color: white;
+        }
+        input{
+            display: inline-block;
+            background-color: red;
+            padding: 8px 10px;
+            border-radius: 5px;
+            font-size: 20px;
+            color: white;
+        }
+    </style>
+</head>
+
+<body>
+    <h2>Are you sure to delete {{student.fullname}}</h2>
+
+    <a href="{% url 'home-view' %}" id="edit">No</a>
+    <form method="post">
+        {% csrf_token %}
+        <input type="submit" value="Yes">
+    </form>
+</body>
+
+</html>

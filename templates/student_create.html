@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Create Student</title>
+</head>
+<body>
+    <h1>Add new student</h1>
+    <form method="post" enctype="multipart/form-data">
+        {% csrf_token %}
+        <label for="fullname">Fullname</label>
+        <input type="text" id="fullname" name="fullname" value="{{student.fullname}}"><br><br>
+        <label for="age">Age</label>
+        <input type="number" id="age" name="age" value="{{student.age}}"><br><br>
+        <label for="email">Email</label>
+        <input type="email" id="email" name="email" value="{{student.email}}"><br><br>
+        <label for="bio">Bio</label>
+        <textarea name="bio" id="bio">{{student.bio}}</textarea><br><br>
+        <label for="image">{{student.image}}</label>
+        <input type="file" name="image" id="image"><br><br>
+        <input type="submit" value="Save">
+    </form>
+</body>
+</html>
